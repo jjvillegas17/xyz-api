@@ -14,7 +14,7 @@ class X implements Drawable
 		$this->size = $size;
 	}
 
-	public function draw($board, $startRow, $startCol, $direction) 
+	public function draw($board, $startRow, $startCol) 
 	{
 		$board = DrawService::diagonalLeftToRight($board, $startRow, $startCol, $this->size);
 		$startCol += $this->size-1;

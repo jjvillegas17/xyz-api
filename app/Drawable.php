@@ -9,5 +9,5 @@ namespace App;
 interface Drawable 
 {
 	// returns the board with the letter/pattern drawn on it 
-	public function draw($board, $startRow, $startCol, $size);
+	public function draw($board, $startRow, $startCol);
 }

@@ -45,7 +45,7 @@ class Board
 
     public function add(Drawable $letter)
    	{
-    	$this->arr = $letter->draw($this->arr, $this->startRow, $this->startCol, $this->size);
+    	$this->arr = $letter->draw($this->arr, $this->startRow, $this->startCol);
     	
     	// adjust startRow or startCol (depending on the direction) for the 
     	// next starting point of the next letter to draw
