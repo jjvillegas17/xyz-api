@@ -1,8 +1,8 @@
 <?php
 
-namespace App;
+namespace App\Helpers;
 
-class DrawService 
+class DrawHelper 
 {
 	public static function diagonalLeftToRight($board, $startRow, $startCol, $size)
 	{

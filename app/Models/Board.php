@@ -1,6 +1,8 @@
 <?php
 
-namespace App;
+namespace App\Models;
+
+use App\Interfaces\Drawable;
 
 class Board 
 {

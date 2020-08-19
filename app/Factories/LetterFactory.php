@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Factories;
 
-use App\X;
-use App\Y;
-use App\Z;
+use App\Models\X;
+use App\Models\Y;
+use App\Models\Z;
 
 class LetterFactory 
 {

@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Board;
-use App\LetterFactory;
+use App\Models\Board;
+use App\Factories\LetterFactory;
 
 class XyzController extends Controller
 {
