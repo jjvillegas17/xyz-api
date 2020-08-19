@@ -4,9 +4,13 @@ namespace App\Models;
 
 use App\Interfaces\Drawable;
 
+/**
+ * holds all the letter patterns drawn to it 
+ */
 class Board 
 {
 	protected $direction;
+	/** 2d array where the line patterns will be drawn */
 	protected $arr = [];
 	protected $row;
 	protected $col;
@@ -45,6 +49,10 @@ class Board
 		}
 	}
 
+	/**
+	 * typehints Drawable for polymorphism. With this, any pattern 
+	 * can be drawn on the board by just creating a class for that pattern 
+	 */
     public function add(Drawable $letter)
    	{
     	$this->arr = $letter->draw($this->arr, $this->startRow, $this->startCol);
@@ -70,15 +78,6 @@ class Board
 		}
 		$out->writeln("");
 
-		echo "<pre>";
-		var_dump($this->arr);
-		echo "</pre>";
-		
-		for ($i = 0 ; $i < $this->row; $i++) {
-			for ($j = 0; $j < $this->col; $j++) {
-				echo $this->arr[$i][$j] . " ";
-			}
-			echo "<br>";
-		}
+		echo "Please check the output on the console.";
     }   
 }

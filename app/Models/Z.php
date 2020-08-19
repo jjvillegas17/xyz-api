@@ -5,6 +5,9 @@ namespace App\Models;
 use App\Interfaces\Drawable;
 use App\Helpers\DrawHelper;
 
+/**
+ * Draw a letter Z pattern on the given board 
+ */
 class Z implements Drawable 
 {
 	protected $size;

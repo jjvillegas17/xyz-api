@@ -6,6 +6,9 @@ use App\Models\X;
 use App\Models\Y;
 use App\Models\Z;
 
+/**
+ * factory that returns instances of specified letter pattern
+ */
 class LetterFactory 
 {
 	public static $letters = [

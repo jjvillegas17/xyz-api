@@ -2,6 +2,9 @@
 
 namespace App\Helpers;
 
+/**
+ * inserts line patterns on the given board 
+ */
 class DrawHelper 
 {
 	public static function diagonalLeftToRight($board, $startRow, $startCol, $size)
