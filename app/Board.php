@@ -21,10 +21,25 @@ class Board
 
 		if ($direction == self::HORIZONTAL) {
 			$this->row = $size;
-			$this->col = $size * $lettersLen;
+			$this->col = $size * $lettersLen + ($lettersLen - 1);
 		} else {
-			$this->row = $size * $lettersLen;
+			$this->row = $size * $lettersLen + ($lettersLen - 1);
 			$this->col = $size;
+		}
+
+		$this->init();
+	}
+
+	/**
+     * initializes all rows and cols of arr with spaces
+     * for printing the whole arr
+     */
+	private function init()
+	{
+		for ($i = 0 ; $i < $this->row ; $i++) {
+			for($j = 0 ; $j < $this->col ; $j++) {
+				$this->arr[$i][$j] = " ";
+			}
 		}
 	}
 
@@ -35,9 +50,9 @@ class Board
     	// adjust startRow or startCol (depending on the direction) for the 
     	// next starting point of the next letter to draw
     	if ($this->direction == self::HORIZONTAL) {
-    		$this->startRow += $this->size;
+    		$this->startCol += $this->size + 1;
     	} else {
-    		$this->startCol += $this->size;
+    		$this->startRow += $this->size + 1;
     	}
     }
 
@@ -45,23 +60,23 @@ class Board
     {
     	$out = new \Symfony\Component\Console\Output\ConsoleOutput();
 
-		// for ($i = 0 ; $i < $this->row; $i++) {
-		// 	for ($j = 0; $j < $this->col; $j++) {
-		// 		$out->write($this->arr[$i][$j]);
-		// 	}
-		// 	$out->writeln("");
-		// }
-		// $out->writeln("");
+		for ($i = 0 ; $i < $this->row; $i++) {
+			for ($j = 0; $j < $this->col; $j++) {
+				$out->write($this->arr[$i][$j]);
+			}
+			$out->writeln("");
+		}
+		$out->writeln("");
 
-		// echo "<pre>";
-		// var_dump($this->arr);
-		// echo "</pre>";
+		echo "<pre>";
+		var_dump($this->arr);
+		echo "</pre>";
 		
-		// for ($i = 0 ; $i < $this->row; $i++) {
-		// 	for ($j = 0; $j < $this->col; $j++) {
-		// 		echo $this->arr[$i][$j] . " ";
-		// 	}
-		// 	echo "<br>";
-		// }
+		for ($i = 0 ; $i < $this->row; $i++) {
+			for ($j = 0; $j < $this->col; $j++) {
+				echo $this->arr[$i][$j] . " ";
+			}
+			echo "<br>";
+		}
     }   
 }
