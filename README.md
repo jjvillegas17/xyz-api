@@ -21,3 +21,4 @@ Sample endpoint:
 http://localhost:8000/api/xyz?letters=XYZxXzzxy&size=9&direction=horizontal
 ```
 Output will be printed in the console where you ran your local server.
+![Sample Console Output](https://github.com/jjvillegas17/xyz-api/blob/master/sampleConsoleOutput.PNG?raw=true)
