@@ -7,7 +7,6 @@ class DrawService
 	public static function diagonalLeftToRight($board, $startRow, $startCol, $size)
 	{
 		for ($i = 0; $i < $size; $i++) {
-			echo $startRow . " " . $startCol . "<br>";
 			$board[$startRow++][$startCol++] = 'o';
 		}	
 
@@ -17,8 +16,16 @@ class DrawService
 	public static function diagonalRightToLeft($board, $startRow, $startCol, $size)
 	{	
 		for ($i = 0; $i < $size; $i++) {
-			echo $startRow . " " . $startCol . "<br>";
 			$board[$startRow++][$startCol--] = 'o'; 
+		}
+
+		return $board;
+	}
+
+	public static function vertical($board, $startRow, $startCol, $size)
+	{
+		for ($i = 0; $i < $size; $i++) {
+			$board[$startRow++][$startCol] = 'o'; 
 		}
 
 		return $board;
