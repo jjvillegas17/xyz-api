@@ -14,8 +14,8 @@ class LetterFactory
 		'z' => Z::class
 	]; 
 
-	public static function make($letter) 
+	public static function make($letter, $size) 
 	{
-		return new self::$letters[$letter]();
+		return new self::$letters[$letter]($size);
 	}   
 }

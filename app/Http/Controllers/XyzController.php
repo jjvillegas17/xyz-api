@@ -15,7 +15,7 @@ class XyzController extends Controller
         $board = new Board($stringLen, $size, $direction);
 
         for ($i = 0 ; $i < $stringLen; $i++) { 
-            $letter = LetterFactory::make($letters[$i]);
+            $letter = LetterFactory::make($letters[$i], $size);
             $board->add($letter);
         }
 
