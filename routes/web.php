@@ -15,4 +15,4 @@ $router->get('/', function () use ($router) {
     return $router->app->version();
 });
 
-$router->get('/api/xyz/{letters}/{size}/{direction}', 'XyzController@index');
+$router->get('/api/xyz', 'XyzController@index');

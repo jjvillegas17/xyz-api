@@ -8,8 +8,18 @@ use App\LetterFactory;
 
 class XyzController extends Controller
 {
-    public function index($letters, $size, $direction)
+    public function index(Request $request)
     {
+        $this->validate($request, [
+            'letters' => ['required', "regex:/^[xXyYzZ]{1,}$/"],
+            'size' => ['required', 'numeric', 'gte:3', 'regex:/^\d*[13579]$/'],
+            'direction' => ['required', 'in:horizontal,vertical'],
+        ]);
+
+        $letters = strtolower($request->input('letters'));
+        $size = $request->input('size');
+        $direction = strtolower($request->input('direction'));
+
         $stringLen = strlen($letters);
 
         $board = new Board($stringLen, $size, $direction);
